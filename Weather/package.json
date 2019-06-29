@@ -1,0 +1,19 @@
+{
+  "name": "weather",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "weather"
+  },
+  "bin": {
+    "weather": "index.js"
+  },
+  "author": "harsh",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "minimist": "^1.2.0",
+    "ora": "^3.4.0"
+  }
+}
