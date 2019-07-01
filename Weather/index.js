@@ -5,8 +5,8 @@ var input = require("minimist")(process.argv.slice(2));
 // log(input);
 const chalk = require("chalk");
 let city;
-if (input["l"] !== undefined) {
-  city = input["l"];
+if (input["l"] !== undefined || input["location"] !== undefined) {
+  city = input["l"] == undefined ? input["location"] : input["l"];
 }
 if (input["_"] == "today") {
   var fn = require("./cmd/today.js");

@@ -19,13 +19,16 @@ async function getWeatherId(city) {
     const res = await axios.get(link);
     woeid = res["data"][0]["woeid"];
     // log(woeid);
-    var weatherResp = await axios.get(
-      "https://www.metaweather.com/api/location/" + woeid
-    );
-    return [city, weatherResp["data"]];
+    try {
+      var weatherResp = await axios.get(
+        "https://www.metaweather.com/api/location/" + woeid
+      );
+      return [city, weatherResp["data"]];
+    } catch (error) {
+      // log("Error! Please try Again");
+    }
     // log(weatherResp["data"]);
   } catch (error) {
-    log(error);
-    spinner.stop();
+    // log("Error! Please try Again");
   }
 }
