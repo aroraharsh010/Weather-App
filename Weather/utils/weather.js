@@ -26,6 +26,6 @@ async function getWeatherId(city) {
     // log(weatherResp["data"]);
   } catch (error) {
     log(error);
-    spinner.fail("Error");
+    spinner.stop();
   }
 }

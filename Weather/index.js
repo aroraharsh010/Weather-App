@@ -2,7 +2,8 @@
 const log = console.log;
 var input = require("minimist")(process.argv.slice(2));
 // console.dir(argv);
-log(input);
+// log(input);
+const chalk = require("chalk");
 let city;
 if (input["l"] !== undefined) {
   city = input["l"];
@@ -13,12 +14,13 @@ if (input["_"] == "today") {
 } else if (input["_"] == "forecast") {
   var fn = require("./cmd/forecast");
   fn(city);
-} else if (input["_"] == "version") {
+} else if (input["version"] == true) {
   require("./cmd/version.js");
-} else if (input["_"] == "help") {
+} else if (input["help"] == true) {
   require("./cmd/help.js");
-} else if (input["_"] == undefined) {
-  log("Use help command to see a list of commands");
+} else if (input["_"] == undefined || input["_"].length == 0) {
+  log(chalk.cyan("Use --help command to see a list of commands"));
 } else {
-  log("Invalid Command");
+  log(chalk.red("Invalid Command"));
+  log(chalk.cyan("Use --help command to see a list of commands"));
 }

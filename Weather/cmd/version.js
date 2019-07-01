@@ -1,2 +1,3 @@
+const chalk = require("chalk");
 var jsonFile = require("./../package.json");
-console.log('v'+jsonFile["version"]);
+console.log(chalk.magenta("v" + jsonFile["version"]));
