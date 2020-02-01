@@ -17,6 +17,7 @@ if (input["_"] == "today") {
 } else if (input["version"] == true) {
   require("./cmd/version.js");
 } else if (input["help"] == true) {
+  console.log("harsh randi hai")
   require("./cmd/help.js");
 } else if (input["_"] == undefined || input["_"].length == 0) {
   log(chalk.cyan("Use --help command to see a list of commands"));
